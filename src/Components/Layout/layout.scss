@@ -4,14 +4,29 @@ $navbar-item-radius: 8px;
 
 .layout-wrap {
   height: 100vh;
+  .h1 {
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+  }
+  .main-content {
+    padding: 20px;
+    height: calc(100vh - #{$navbar-height});
+    overflow-y: scroll;
+  }
+  .main-icon {
+    max-width: 80vw;
+    max-height: 45vh;
+  }
   .nav-bottom{
     display: flex;
     position: fixed;
     bottom: 0;
+    background: #fff;
     height: $navbar-height;
     list-style: none;
     margin-bottom: 0;
     padding: 0;
+    left: 0;
     width: 100%;
     & > li {
       flex: 1;
@@ -37,8 +52,11 @@ $navbar-item-radius: 8px;
       }
       .link-name{
         color: $color-text;
-        margin-top: 10px;
+        margin-top: 13px;
         line-height: 1;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 100%;
       }
     }
   }

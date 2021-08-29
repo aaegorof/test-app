@@ -1,14 +1,15 @@
 import React, { FC } from "react";
 import { Link, useLocation } from "react-router-dom";
+import navigation from "../../navigation";
 
-type MenuItems = {
+export type MenuItems = {
   name: string;
   image: string;
 };
 
 type Props = {
   menu: MenuItems[];
-  type: "bottom" | "top";
+  type?: "bottom" | "top";
 };
 
 const Navbar: FC<Props> = ({ menu, type = "bottom" }) => {
@@ -21,6 +22,7 @@ const Navbar: FC<Props> = ({ menu, type = "bottom" }) => {
           <li
             key={item.name}
             className={slug === item.name.toLowerCase() ? "active" : ""}
+            style={{maxWidth: `${100/navigation.length}%`}}
           >
             <Link to={item.name.toLowerCase()}>
               {item.image && <img src={item.image} alt={item.name} />}

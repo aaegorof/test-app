@@ -1,9 +1,27 @@
 @import './vars.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
+body {
+  margin: 0;
+  color: $color-text;
+  font-family: $font, sans-serif;
+}
 img{
   max-width: 100%;
   height: auto;
 }
 *{
   box-sizing: border-box;
+}
+
+h1 {
+  font-size: 64px;
+  text-align: center;
+}
+
+
+
+//helpers
+.text-center {
+  text-align: center;
 }

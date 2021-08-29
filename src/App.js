@@ -7,7 +7,6 @@ import Layout from "./Components/Layout";
 const App = () => {
   return (
     <Router>
-      <Layout>
         <Switch>
           <Route exact path="/">
             Главная
@@ -16,12 +15,12 @@ const App = () => {
             <Route
               key={item.name + index}
               exact
-              path={item.name.toLowerCase()}
-              children={<img src={item.image} />}
-            />
+              path={'/'+item.name.toLowerCase()}
+            >
+              <Layout item={item}/>
+            </Route>
           ))}
         </Switch>
-      </Layout>
     </Router>
   );
 };
