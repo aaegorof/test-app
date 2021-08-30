@@ -5,6 +5,7 @@ type Props = {
     item: MenuItems
 }
 
+
 const MainContent: React.FC<Props> = ({item}) => {
     return (
         <div className="main-content">
