@@ -7,15 +7,10 @@ type Props = {
     item: MenuItems
 }
 
-const Layout:FC<Props> = ({ item }) => {
+const Layout:FC<Props> = ({ children }) => {
   return (
     <div className="layout-wrap">
-      <div className="main-content">
-        <h1 className={'h1'} title={item.name}>{item.name}</h1>
-        <div className="text-center">
-            <img className={'main-icon'} src={item.image} />
-        </div>
-      </div>
+        {children}
       <Navbar menu={navigation} />
     </div>
   );
