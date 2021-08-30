@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles/app.scss";
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { Route, BrowserRouter as Router, Switch, Redirect } from "react-router-dom";
 import navigation from "./navigation";
 import Layout from "./Components/Layout";
 import MainContent from "./Components/Layout/MainContent";
@@ -19,9 +19,7 @@ const App = () => {
               <MainContent item={item}/>
             </Route>
           ))}
-          <Route path='/'>
-            <MainContent item={navigation[0]}/>
-          </Route>
+          <Redirect from='/' to={navigation[0].name.toLowerCase()}/>
         </Switch>
       </Layout>
     </Router>
